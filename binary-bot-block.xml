@@ -1,0 +1,306 @@
+﻿<xml xmlns="http://www.w3.org/1999/xhtml" collection="true">
+  <block type="controls_if" id="Gm=2+!qzK0?{FG(?7fl0">
+    <mutation else="1"></mutation>
+    <value name="IF0">
+      <block type="logic_compare" id="?Wu-0`Gi$BL@pCPSuDIG">
+        <field name="OP">GT</field>
+        <value name="A">
+          <block type="tick" id="j2,g}@rzr4Pi@YEUO#)u"></block>
+        </value>
+        <value name="B">
+          <block type="bb" id="1%kp@.y3|F8~Zwrf3=bf">
+            <field name="BBRESULT_LIST">1</field>
+            <value name="INPUT">
+              <block type="ohlc_values_in_list" id="k{8:~j[PA6ZPgR[Zxi89">
+                <field name="OHLCFIELD_LIST">open</field>
+                <value name="OHLCLIST">
+                  <block type="ohlc" id="/+:ixH`k)AyW)TRB3,eU">
+                    <field name="CANDLEINTERVAL_LIST">default</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="PERIOD">
+              <shadow type="math_number" id="-Ew~efmyTF-bP{u]Gqx6">
+                <field name="NUM">3</field>
+              </shadow>
+            </value>
+            <value name="UPMULTIPLIER">
+              <shadow type="math_number" id="%)*u:K!lMCPus!?A{!u,">
+                <field name="NUM">1.2</field>
+              </shadow>
+            </value>
+            <value name="DOWNMULTIPLIER">
+              <shadow type="math_number" id="Ch`n!`}9WSC{T7}^:5Oi">
+                <field name="NUM">1.2</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="notify" id="J$)L23;Gd1o2%],Yb.+5">
+        <field name="NOTIFICATION_TYPE">success</field>
+        <field name="NOTIFICATION_SOUND">silent</field>
+        <value name="MESSAGE">
+          <shadow type="text" id="pAk=ST%60;{CV`12hg|T">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text_join" id="IjxG~,DM}y9IY_U^#t@d">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text" id="=+n4e7Wv-(a5#sVibH9M">
+                <field name="TEXT">InPut </field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="variables_get" id="4l_sNXiU2n-DGt[fK0PK">
+                <field name="VAR">Modal</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="purchase" id="}iuAXmUWdkjK@_j,R-^~">
+            <field name="PURCHASE_LIST">CALL</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="ELSE">
+      <block type="controls_if" id="N[w!le]u8FDI40~];@TW">
+        <value name="IF0">
+          <block type="logic_operation" id="+GIRZ6@T=(9?ahAB=2VA">
+            <field name="OP">AND</field>
+            <value name="A">
+              <block type="variables_get" id="v7IG0z{ur9}7:;n|5f:o">
+                <field name="VAR">RSLoss</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_compare" id="GamL4jZ|al7n%BuegC+v">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="tick" id="uEfBmZ01r4s*WC[wWPUT"></block>
+                </value>
+                <value name="B">
+                  <block type="bb" id="{,_-Y=(gO]*hkW2bV?q8">
+                    <field name="BBRESULT_LIST">1</field>
+                    <value name="INPUT">
+                      <block type="ohlc_values_in_list" id="z~_]*!dMh=n^~!E/jmf$">
+                        <field name="OHLCFIELD_LIST">open</field>
+                        <value name="OHLCLIST">
+                          <block type="ohlc" id="s$z`_Uz-u`b9r2dmT^#V">
+                            <field name="CANDLEINTERVAL_LIST">default</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="PERIOD">
+                      <shadow type="math_number" id="ZF5@VW63mb(b9y~m%~{h">
+                        <field name="NUM">3</field>
+                      </shadow>
+                    </value>
+                    <value name="UPMULTIPLIER">
+                      <shadow type="math_number" id="T!1f(Y~V5=4p~ih@)(tI">
+                        <field name="NUM">1.2</field>
+                      </shadow>
+                    </value>
+                    <value name="DOWNMULTIPLIER">
+                      <shadow type="math_number" id="JA,t|WU7#bxDt2%do6Bo">
+                        <field name="NUM">1.2</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="notify" id="0kB*^/EAa(m5K=z=nhk:">
+            <field name="NOTIFICATION_TYPE">error</field>
+            <field name="NOTIFICATION_SOUND">silent</field>
+            <value name="MESSAGE">
+              <shadow type="text" id="6$^WhcliEJ)DmAf~]Hql">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="text_join" id="-4Ev;{}`MAE/K1!oPB0x">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="-pS{z?yub2k}yRG|r)+g">
+                    <field name="TEXT">InPut </field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="variables_get" id="58gr%SFKSpvQN!PY|vj]">
+                    <field name="VAR">Modal</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="purchase" id="vDv6]zcvZ`ZCmEL~s?SC">
+                <field name="PURCHASE_LIST">CALL</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <next>
+      <block type="controls_if" id="#iVmwBeVfN?pgnx}w{3L">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="qm{TyOlL@_N^l,oCKK=8">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="tick" id="B2rS1=EbA@6#,lH{Q^xr"></block>
+            </value>
+            <value name="B">
+              <block type="bb" id="FZ}19uT$eJ:ofZmGUNT:">
+                <field name="BBRESULT_LIST">1</field>
+                <value name="INPUT">
+                  <block type="ohlc_values_in_list" id="]9lM]CTtgSfH?Ezh:IQ!">
+                    <field name="OHLCFIELD_LIST">open</field>
+                    <value name="OHLCLIST">
+                      <block type="ohlc" id="^GHNnbT2jkW-wH3H{pi_">
+                        <field name="CANDLEINTERVAL_LIST">default</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="PERIOD">
+                  <shadow type="math_number" id="R*J4vB=j[?fl;-luf1Fb">
+                    <field name="NUM">3</field>
+                  </shadow>
+                </value>
+                <value name="UPMULTIPLIER">
+                  <shadow type="math_number" id="PXB!q8u5S|Kx)gaQt~?W">
+                    <field name="NUM">1.2</field>
+                  </shadow>
+                </value>
+                <value name="DOWNMULTIPLIER">
+                  <shadow type="math_number" id="gbT8r6Dy0v6kY31#t4/{">
+                    <field name="NUM">1.2</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="notify" id="D;LPV8r!@7)#Shh,P+Mv">
+            <field name="NOTIFICATION_TYPE">success</field>
+            <field name="NOTIFICATION_SOUND">silent</field>
+            <value name="MESSAGE">
+              <shadow type="text" id="pAk=ST%60;{CV`12hg|T">
+                <field name="TEXT">abc</field>
+              </shadow>
+              <block type="text_join" id="F%jU[4Z[V%!5RY?rl~r}">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="YY9Pbkkb{P[pIKa|cn4Z">
+                    <field name="TEXT">InPut </field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="variables_get" id=",6:J:xG8h0j#ES)s[fqC">
+                    <field name="VAR">Modal</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="purchase" id="7JU-W`FZcC!us[z0k?%q">
+                <field name="PURCHASE_LIST">PUT</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="controls_if" id="}3_ta|5c6O=l97u^R4(0">
+            <value name="IF0">
+              <block type="logic_operation" id="q5=mN{O^KYl9VtaKd5Vx">
+                <field name="OP">AND</field>
+                <value name="A">
+                  <block type="variables_get" id="6|0pM!;XJCVljueh68%H">
+                    <field name="VAR">RSLoss</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_compare" id="2LJEmpA,92HbB$`,Y#LP">
+                    <field name="OP">GT</field>
+                    <value name="A">
+                      <block type="tick" id="PL[GN7j{!ff#]MA2gP5Q"></block>
+                    </value>
+                    <value name="B">
+                      <block type="bb" id="gBEhdwrnwi;cdnN+c7-x">
+                        <field name="BBRESULT_LIST">1</field>
+                        <value name="INPUT">
+                          <block type="ohlc_values_in_list" id="72`._f3hUbl,_1I[S7Ws">
+                            <field name="OHLCFIELD_LIST">open</field>
+                            <value name="OHLCLIST">
+                              <block type="ohlc" id="ht3iMv89En.K$CM.FbZL">
+                                <field name="CANDLEINTERVAL_LIST">default</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="PERIOD">
+                          <shadow type="math_number" id="[k}~x%.FikRa3W=MJKa7">
+                            <field name="NUM">3</field>
+                          </shadow>
+                        </value>
+                        <value name="UPMULTIPLIER">
+                          <shadow type="math_number" id="j)9c;Ct8*D:OO1vpKL**">
+                            <field name="NUM">1.2</field>
+                          </shadow>
+                        </value>
+                        <value name="DOWNMULTIPLIER">
+                          <shadow type="math_number" id="lsHlZ=BHy0AIgrY7lN(X">
+                            <field name="NUM">1.2</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="notify" id="3[M~XDc*x`]dY(8gJBlo">
+                <field name="NOTIFICATION_TYPE">error</field>
+                <field name="NOTIFICATION_SOUND">silent</field>
+                <value name="MESSAGE">
+                  <shadow type="text" id="6$^WhcliEJ)DmAf~]Hql">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="text_join" id="YZkkU2~v*dnoN+k$ThJG">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="!6SHCZG%`#V!kp*5jP1F">
+                        <field name="TEXT">InPut </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="variables_get" id="C,s0nXP/he4/4|6P`2pv">
+                        <field name="VAR">Modal</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="purchase" id="ccv7N#^L.s$pQd*8R}cl">
+                    <field name="PURCHASE_LIST">PUT</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
